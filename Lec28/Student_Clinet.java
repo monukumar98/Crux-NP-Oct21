@@ -24,6 +24,7 @@ public class Student_Clinet {
 		s3.age = 26;
 		s2.introduceYourself();
 		s3.introduceYourself();
+		s2.SayHey("Kaju");
 //		System.out.println(s2.name + " " + s2.age);// kunal 28
 //		System.out.println(s3.name + " " + s3.age);// hardik 26
 //		System.out.println("................");
@@ -35,8 +36,7 @@ public class Student_Clinet {
 //		System.out.println("................");
 //		System.out.println(s2.name + " " + s2.age);
 //		System.out.println(s3.name + " " + s3.age);
-		s2.introduceYourself();
-		s3.introduceYourself();
+	
 		
 
 	}
