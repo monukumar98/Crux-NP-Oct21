@@ -27,7 +27,8 @@ public class Queue {
 		if (this.isfull()) {
 			throw new Exception("Queue is full");
 		}
-		this.arr[size] = item;
+		int i = (this.size + this.front) % this.arr.length;
+		this.arr[i] = item;
 		this.size++;
 
 	}
@@ -37,7 +38,7 @@ public class Queue {
 			throw new Exception("Queue is empty h");
 		}
 		int item = this.arr[this.front];
-		this.front++;
+		this.front = (this.front + 1) % this.arr.length;
 		this.size--;
 		return item;
 	}
@@ -51,6 +52,15 @@ public class Queue {
 			throw new Exception("Queue is empty h");
 		}
 		return this.arr[this.front];
+	}
+
+	public void Display() {
+		for (int i = 0; i < this.size; i++) {
+			int idx = (front + i) % this.arr.length;
+			System.out.print(arr[idx] + " ");
+
+		}
+		System.out.println();
 	}
 
 }
