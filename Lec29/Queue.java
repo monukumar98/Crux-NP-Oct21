@@ -1,9 +1,9 @@
 package Lec29;
 
 public class Queue {
-	private int[] arr;
-	private int front;
-	private int size;
+	protected int[] arr;
+	protected int front;
+	protected int size;
 
 	public Queue() {
 		arr = new int[5];
