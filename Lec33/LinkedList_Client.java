@@ -8,19 +8,20 @@ public class LinkedList_Client {
 		ll.addfirst(1);
 		ll.addfirst(2);
 		ll.addfirst(3);
-		ll.Display();
+		// ll.Display();
 		ll.addlast(6);
 		ll.addlast(5);
-		ll.Display();
+		// ll.Display();
 		ll.Addatindex(2, 90);
 		ll.Display();
-		System.out.println(ll.getfirst());
-		System.out.println(ll.getLast());
-		System.out.println(ll.getatindex(3));
-		
-		
-		
-		
+//		System.out.println(ll.getfirst());
+//		System.out.println(ll.getLast());
+//		System.out.println(ll.getatindex(3));
+
+		//System.out.println(ll.removefirst());
+		//System.out.println(ll.removeLast());
+		System.out.println(ll.removekthnode(2));
+		ll.Display();
 
 	}
 

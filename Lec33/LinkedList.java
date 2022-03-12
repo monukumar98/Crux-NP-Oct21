@@ -71,28 +71,85 @@ public class LinkedList {
 		}
 		return temp;
 	}
-	
-	
-	public int getfirst() throws Exception  {
-		if(this.size==0) {
-			throw new  Exception("Linked List is empty");
+
+	public int getfirst() throws Exception {
+		if (this.size == 0) {
+			throw new Exception("Linked List is empty");
 		}
-		
+
 		return this.head.data;
 	}
-	public int getLast() throws Exception  {
-		if(this.size==0) {
-			throw new  Exception("Linked List is empty");
+
+	public int getLast() throws Exception {
+		if (this.size == 0) {
+			throw new Exception("Linked List is empty");
 		}
-		
+
 		return this.tail.data;
 	}
+
 	public int getatindex(int k) throws Exception {
 		return GetNode(k).data;
 	}
-	
-	
 
+	public int removefirst() throws Exception {
+		if (this.size == 0) {
+			throw new Exception("Linked List is empty");
+		}
+
+		if (this.size == 1) {
+			int rd = this.head.data;
+			this.head = null;
+			this.tail = null;
+			this.size--;
+			return rd;
+		} else {
+			Node temp = this.head;
+			this.head = this.head.next;
+			temp.next = null;
+			this.size--;
+			return temp.data;
+		}
+
+	}
+
+	public int removeLast() throws Exception {
+		if (this.size == 0) {
+			throw new Exception("Linked List is empty");
+		}
+		if (this.size == 1) {
+			return removefirst();
+		} else {
+			Node last = GetNode(this.size - 2);
+			int rd = last.next.data;
+			last.next = null;
+			this.tail = last;
+			this.size--;
+			return rd;
+		}
+
+	}
+
+	public int removekthnode(int k) throws Exception {
+		if(k<0 || k>=this.size) {
+			throw new Exception("Index glt h");
+		}
+		if(k==0) {
+			return removefirst();
+		}
+		else if(k==this.size-1) {
+			return removeLast();
+		}
+		else {
+			Node prev= GetNode(k-1);
+			Node curr= prev.next;
+			prev.next=curr.next;
+			curr.next=null;
+			this.size--;
+			return curr.data;
+			
+		}
+	}
 	public void Display() {
 		Node temp = this.head;
 		while (temp != null) {
