@@ -71,7 +71,7 @@ public class Binary_Tree {
 
 	private boolean find(Node node, int item) {
 		// TODO Auto-generated method stub
-		if(node==null) {
+		if (node == null) {
 			return false;
 		}
 		if (node.data == item) {
@@ -81,6 +81,91 @@ public class Binary_Tree {
 		boolean left = find(node.left, item);
 		boolean right = find(node.right, item);
 		return left || right;
+
+	}
+
+	public int min() {
+		return min(this.root);
+	}
+
+	private int min(Node node) {
+		if (node == null) {
+			return Integer.MAX_VALUE;
+		}
+
+		int minleft = min(node.left);
+		int minright = min(node.right);
+		return Math.min(node.data, Math.min(minleft, minright));
+
+	}
+
+	public int size() {
+		return size(this.root);
+	}
+
+	private int size(Node node) {
+		// TODO Auto-generated method stub
+		if (node == null) {
+			return 0;
+		}
+
+		int ls = size(node.left);
+		int rs = size(node.right);
+		return ls + rs + 1;
+
+	}
+
+	public void PreOrder() {
+		PreOrder(this.root);
+		System.out.println();
+
+	}
+
+	private void PreOrder(Node node) {
+		// TODO Auto-generated method stub
+		if (node == null) {
+			return;
+		}
+
+		System.out.print(node.data + " ");
+		PreOrder(node.left);
+		PreOrder(node.right);
+
+	}
+
+	public void PostOrder() {
+		PostOrder(this.root);
+		System.out.println();
+
+	}
+
+	private void PostOrder(Node node) {
+		// TODO Auto-generated method stub
+		if (node == null) {
+			return;
+		}
+
+		PostOrder(node.left);
+		PostOrder(node.right);
+		System.out.print(node.data + " ");
+
+	}
+
+	public void InOrder() {
+		InOrder(this.root);
+		System.out.println();
+
+	}
+
+	private void InOrder(Node node) {
+		// TODO Auto-generated method stub
+		if (node == null) {
+			return;
+		}
+
+		InOrder(node.left);
+		System.out.print(node.data + " ");
+		InOrder(node.right);
 
 	}
 
