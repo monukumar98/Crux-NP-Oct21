@@ -6,6 +6,8 @@ public class Binary_Tree_Client {
 		// TODO Auto-generated method stub
 		Binary_Tree bt = new Binary_Tree();
 		bt.dispaly();
+		System.out.println(bt.find(90));
+		//10 true 2 true 7 false false true 18 false false true 50 true 90 false true 17 false false false
 
 	}
 
